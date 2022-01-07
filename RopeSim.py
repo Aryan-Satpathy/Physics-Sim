@@ -78,7 +78,7 @@ def convertInt(point) :
 
 def display(points, sticks) : 
     global canvas
-    canvas = np.ones((1000, 1900, 3), dtype = np.uint8) * 255
+    canvas = np.zeros((1000, 1900, 3), dtype = np.uint8) * 255
 
     for stick in sticks : 
         point1, point2 = stick.point1, stick.point2
@@ -146,7 +146,7 @@ def main() :
     sticks += [Stick(points[1], points[2])]
     sticks += [Stick(points[3 + i], points[4 + i]) for i in range(n - 1)]                                   # 4 + i
 
-    print(sticks[3].point1.pos, sticks[3].point2.pos)
+    # print(sticks[3].point1.pos, sticks[3].point2.pos)
 
     display(points, sticks)
     cv2.waitKey(0)
